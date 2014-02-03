@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.10" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+	<name>${ant.project.name}</name>
+	<channel>${pear.channel}</channel>
+	<summary>Generator framework for PHP5</summary>
+	<description>This framework provides functionality for source code generation and is extendable with plugins.</description>
+	<lead>
+		<name>Tim Wagner</name>
+		<user>wagnert</user>
+		<email>tw@techdivision.com</email>
+		<active>yes</active>
+	</lead>
+	<date>${actual.date}</date>
+	<time>${actual.time}</time>
+	<version>
+		<release>${release.version}</release>
+		<api>${api.version}</api>
+	</version>
+	<stability>
+		<release>${release.stability}</release>
+		<api>${api.stability}</api>
+	</stability>
+	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+	<notes>- Add processor remote delegate implementation</notes>
+	<contents>
+		<dir name="/">
+			<file baseinstalldir="/" name="generator" role="script"/>
+			<file baseinstalldir="TechDivision/Generator" name="Implementation.php" role="php"/>
+			<dir name="Plugins">
+				<file baseinstalldir="TechDivision/Generator" name="Default.php" role="php"/>
+				<file baseinstalldir="TechDivision/Generator" name="SingleFile.php" role="php"/>
+				<file baseinstalldir="TechDivision/Generator" name="Namespace.php" role="php"/>
+			</dir>
+<!-- /Plugins -->
+			<dir name="Interfaces">
+				<file baseinstalldir="TechDivision/Generator" name="Plugin.php" role="php"/>
+			</dir>
+<!-- /Interfaces -->
+			<dir name="Exceptions">
+				<file baseinstalldir="TechDivision/Generator" name="GeneratorException.php" role="php"/>
+			</dir>
+<!-- /Exceptions -->
+			<dir name="Templates">
+				<dir name="Api">
+					<file baseinstalldir="TechDivision/Generator" name="CreateTableList.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="TableDocumentationIndex.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Tables.xsl" role="data"/>
+				</dir>
+<!-- /Api -->
+				<dir name="Block">
+					<file baseinstalldir="TechDivision/Generator" name="Abstract.xsl" role="data"/>
+				</dir>
+				<!-- /Block -->
+				<dir name="Common">
+					<file baseinstalldir="TechDivision/Generator" name="Delegate.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DelegateImplementation.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DelegateRemoteImplementation.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DelegateUtil.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="LightValue.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Value.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="ProcessorProxy.xsl" role="data"/>
+				</dir>
+<!-- /Common -->
+				<dir name="Model">
+					<file baseinstalldir="TechDivision/Generator" name="AbstractProcessor.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CountException.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateException.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DeleteException.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DeploymentDescriptor.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Entity.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="FindException.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="LocalHome.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="LVOAssembler.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="QueryUtil.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Test.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="UpdateException.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Util.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="VOAssembler.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Mapping.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Collection.xsl" role="data"/>
+				</dir>
+<!-- /Model -->
+				<dir name="Sql">
+					<file baseinstalldir="TechDivision/Generator" name="CreateForeignKeys.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateFulltextIndex.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateIndex.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateInitialData.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreatePrimaryKeys.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateProcedures.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateTables.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateTriggers.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateUniqueIndex.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="CreateViews.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DropForeignKeys.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DropIndex.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DropPrimaryKeys.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DropTables.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DropTriggers.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="DropViews.xsl" role="data"/>
+				</dir>
+<!-- /Sql -->
+				<dir name="Utils">
+					<file baseinstalldir="TechDivision/Generator" name="String.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="Utils.xsl" role="data"/>
+				</dir>
+<!-- /Utils -->
+				<dir name="Workflow">
+					<file baseinstalldir="TechDivision/Generator" name="WorkflowCreateAction.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="WorkflowDeleteAction.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="WorkflowOverviewDataAction.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="WorkflowUpdateAction.xsl" role="data"/>
+					<file baseinstalldir="TechDivision/Generator" name="WorkflowViewDataAction.xsl" role="data"/>
+				</dir>
+			</dir>
+<!-- /Templates -->
+		</dir>
+<!-- / -->
+	</contents>
+	<dependencies>
+		<required>
+			<php>
+				<min>5.2.0</min>
+				<max>6.0</max>
+			</php>
+			<pearinstaller>
+				<min>1.6.2</min>
+			</pearinstaller>
+		</required>
+	</dependencies>
+	<phprelease/>
+	<changelog>
+		<release xmlns="">
+                    <version>
+                        <release>0.3.17</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-09-22</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Add processor remote delegate implementation
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.16</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-09-12</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Refactor for usage with Application Server
+
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.15</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-02-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Replacing connect() method with load() method to allow lazy loading
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.14</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-01-22</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Add bugfix in template Abstract block
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.13</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-01-09</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix for invalid row calculation after loading a collection with limit
+
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.12</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-01-07</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix involid initialization of return type HashMap
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.11</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2012-01-06</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Minor changes
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.10</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-12-29</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Refactor/Add templates, add new Namespace plugin
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.9</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-12-23</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix Release
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.8</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-12-23</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix Release
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.7</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-11-20</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Add possibilty to define a default attribute to be rendered when calling __toString()
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.6</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-11-19</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix abstract block template
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.5</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-11-19</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Add abstract block template
+                    </notes>
+                </release>
+<release xmlns="">
+                    <version>
+                        <release>0.3.4</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-20</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Refactoring templates for entities and local homes
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.3.3</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-08</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Update to work with new TechDivision_Model version
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.3.2</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Refactor build- and deployment process, minor changes for usage with new TechDivision_Model implementation
+                    </notes>
+                </release>
+<release>
+			<version>
+				<release>0.3.1</release>
+				<api>0.3.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2011-07-30</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid entity getter method generation for relations with multiplicity == one 
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.9</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-08-19</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Adding ` to field and table names in entity SQL statements 
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.8</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-08-18</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring entity template to return an empty ArrayList for relations if primary key is NULL 
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.7</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-08-10</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring template for initial-data generation
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.6</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-29</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring Mapping template
+				- Refactoring Entity template
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.5</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-24</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid Value instance initialization
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.4</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-21</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring template for Mapping
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.3</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-16</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring template for DelegatUtil
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.2</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-06</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Adding initialization of members to entity __constructor() method 
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.1</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-18</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid Value initialization in template Value 
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.0</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-11</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring LocalHome Templates to load entities in finder methods instead of populate them
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.8</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-11</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Removing final keyword in LocalHome methods
+				- Readd getters for referenced entities
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.7</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-10</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Removing reference getters/setters from Entity.xsl template
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.6</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-10</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring DocBlock in templates
+				- Adding possibility to use PHP functions in XSL Templates
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.5</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-04</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring several templates
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.4</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-04</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring several templates
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.3</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-03</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invald DelegateImplementation stylesheet
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.2</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>${actual.date}</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring stylesheets
+				- Refactoring stylesheet load functionality
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.1</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-02</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Add missing stylesheet for Mappings
+				- Bugfixing invalid parameter handling in generator shell script (PHP 5.3)
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.0</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-05-19</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Initial release
+			</notes>
+		</release>
+	</changelog>
+</package>

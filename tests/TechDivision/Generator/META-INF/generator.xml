@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<conf namespace="TechDivision" module="Generator">
+	<includes>
+		<include id="include_path_manager">TechDivision/Model/Manager/</include>
+		<include id="include_path_entities">TechDivision/Generator/Model/Entities/</include>
+		<include id="include_path_assembler">TechDivision/Generator/Model/Assembler/</include>
+		<include id="include_path_homes">TechDivision/Generator/Model/Homes/</include>
+		<include id="include_path_utils">TechDivision/Generator/Model/Utils/</include>
+		<include id="include_path_exceptions">TechDivision/Generator/Model/Exceptions/</include>
+		<include id="include_path_value_objects">TechDivision/Generator/Common/ValueObjects/</include>
+		<include id="include_path_mappings">TechDivision/Generator/Model/Mappings/</include>
+	</includes>
+	<plugins>
+		<plugin name="CountExceptionPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Exceptions/</output>
+			<xsl>TechDivision/Generator/Templates/Model/CountException.xsl</xsl>
+			<suffix>CountException</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="CreateExceptionPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Exceptions/</output>
+			<xsl>TechDivision/Generator/Templates/Model/CreateException.xsl</xsl>
+			<suffix>CreateException</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="DeleteExceptionPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Exceptions/</output>
+			<xsl>TechDivision/Generator/Templates/Model/DeleteException.xsl</xsl>
+			<suffix>DeleteException</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="FindExceptionPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Exceptions/</output>
+			<xsl>TechDivision/Generator/Templates/Model/FindException.xsl</xsl>
+			<suffix>FindException</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="UpdateExceptionPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Exceptions/</output>
+			<xsl>TechDivision/Generator/Templates/Model/UpdateException.xsl</xsl>
+			<suffix>UpdateException</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="LocalHomePlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Homes/</output>
+			<xsl>TechDivision/Generator/Templates/Model/LocalHome.xsl</xsl>
+			<suffix>LocalHome</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="LightValuePlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Common/ValueObjects/</output>
+			<xsl>TechDivision/Generator/Templates/Common/LightValue.xsl</xsl>
+			<suffix>LightValue</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="LVOAssemblerPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Assembler/</output>
+			<xsl>TechDivision/Generator/Templates/Model/LVOAssembler.xsl</xsl>
+			<suffix>LVOAssembler</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="StorablePlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Entities/</output>
+			<xsl>TechDivision/Generator/Templates/Model/Entity.xsl</xsl>
+			<suffix />
+			<prefix />
+		</plugin>
+		<plugin name="UtilPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Utils/</output>
+			<xsl>TechDivision/Generator/Templates/Model/Util.xsl</xsl>
+			<suffix>Util</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="ValuePlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Common/ValueObjects/</output>
+			<xsl>TechDivision/Generator/Templates/Common/Value.xsl</xsl>
+			<suffix>Value</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="VOAssemblerPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Assembler/</output>
+			<xsl>TechDivision/Generator/Templates/Model/VOAssembler.xsl</xsl>
+			<suffix>VOAssembler</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="DelegatePlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/services/</input>
+			<output>TechDivision/Generator/Common/Delegates/Interfaces/</output>
+			<xsl>TechDivision/Generator/Templates/Common/Delegate.xsl</xsl>
+			<suffix>Delegate</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="DelegateUtilPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/services/</input>
+			<output>TechDivision/Generator/Common/Delegates/</output>
+			<xsl>TechDivision/Generator/Templates/Common/DelegateUtil.xsl</xsl>
+			<suffix>DelegateUtil</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="DelegateImplementationPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/services/</input>
+			<output>TechDivision/Generator/Common/Delegates/</output>
+			<xsl>TechDivision/Generator/Templates/Common/DelegateImplementation.xsl</xsl>
+			<suffix>DelegateImplementation</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="AbstractProcessorPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/services/</input>
+			<output>TechDivision/Generator/Model/Processors/</output>
+			<xsl>TechDivision/Generator/Templates/Model/AbstractProcessor.xsl</xsl>
+			<suffix />
+			<prefix>Abstract</prefix>
+		</plugin>
+		<plugin name="StorableQueryUtilPlugin" type="TechDivision_Generator_Plugins_Default" include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Homes/</output>
+			<xsl>TechDivision/Generator/Templates/Model/QueryUtil.xsl</xsl>
+			<suffix>QueryUtil</suffix>
+			<prefix />
+		</plugin>
+		<plugin name="DropTablesPlugin" type="TechDivision_Generator_Plugins_SingleFile" include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/drop-tables.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/DropTables.xsl</xsl>
+		</plugin>
+		<plugin name="DropViewsPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/drop-views.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/DropViews.xsl</xsl>
+		</plugin>
+		<plugin name="DropForeignKeysPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/drop-foreignkeys.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/DropForeignKeys.xsl
+			</xsl>
+		</plugin>
+		<plugin name="DropPrimaryKeysPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/drop-primarykeys.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/DropPrimaryKeys.xsl
+			</xsl>
+		</plugin>
+		<plugin name="DropIndexPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/drop-index.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/DropIndex.xsl</xsl>
+		</plugin>
+		<plugin name="DropTriggerPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/drop-triggers.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/DropTriggers.xsl</xsl>
+		</plugin>
+		<plugin name="CreateTablesPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-tables.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateTables.xsl</xsl>
+		</plugin>
+		<plugin name="CreateViewsPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-views.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateViews.xsl</xsl>
+		</plugin>
+		<plugin name="CreateForeignKeysPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-foreignkeys.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateForeignKeys.xsl
+			</xsl>
+		</plugin>
+		<plugin name="CreatePrimaryKeysPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-primarykeys.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreatePrimaryKeys.xsl
+			</xsl>
+		</plugin>
+		<plugin name="CreateUniqueIndexPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-uniqueindex.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateUniqueIndex.xsl
+			</xsl>
+		</plugin>
+		<plugin name="CreateFulltextIndexPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-fulltextindex.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateFulltextIndex.xsl
+			</xsl>
+		</plugin>
+		<plugin name="CreateIndexPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-index.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateIndex.xsl</xsl>
+		</plugin>
+		<plugin name="CreateTriggersPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-triggers.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateTriggers.xsl
+			</xsl>
+		</plugin>
+		<plugin name="CreateProceduresPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-procedures.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateProcedures.xsl</xsl>
+		</plugin>
+		<plugin name="DeploymentDescriptorPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/,TechDivision/Generator/META-INF/services/</input>
+			<output>TechDivision/Generator/META-INF/deployment-descriptor.xml</output>
+			<template>TechDivision/Generator/META-INF/deployment-descriptor-template.xml</template>
+			<xsl>TechDivision/Generator/Templates/Model/DeploymentDescriptor.xsl</xsl>
+		</plugin>
+		<plugin name="CreateTableListPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/table-list.txt</output>
+			<xsl>TechDivision/Generator/Templates/Api/CreateTableList.xsl</xsl>
+		</plugin>
+		<plugin name="CreateInitialDataPlugin" type="TechDivision_Generator_Plugins_SingleFile"
+			include="TechDivision/Generator/Plugins/SingleFile.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Sql/System/create-initialdata.sql</output>
+			<xsl>TechDivision/Generator/Templates/Sql/CreateInitialData.xsl</xsl>
+		</plugin>
+		<plugin name="MappingPlugin" type="TechDivision_Generator_Plugins_Default"
+			include="TechDivision/Generator/Plugins/Default.php">
+			<input>TechDivision/Generator/META-INF/entities/</input>
+			<output>TechDivision/Generator/Model/Mappings/</output>
+			<xsl>TechDivision/Generator/Templates/Model/Mapping.xsl</xsl>
+			<suffix>Mapping</suffix>
+			<prefix />
+		</plugin>
+	</plugins>
+</conf>

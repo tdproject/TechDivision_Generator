@@ -1,0 +1,10 @@
+CREATE DATABASE test_generator;
+USE test_generator;
+CREATE TABLE `user` (`user_id` int(10) NOT NULL, `firstname` varchar(255) NOT NULL, `lastname` varchar(255) NOT NULL, `email` varchar(255) NOT NULL default 1, `username` varchar(50) NOT NULL, `password` varchar(32) NOT NULL) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ENGINE=InnoDB;
+ALTER TABLE `user` ADD CONSTRAINT user_pk PRIMARY KEY (`user_id`); 
+ALTER TABLE `user` CHANGE user_id `user_id` int(10) AUTO_INCREMENT;
+CREATE TABLE `project` (`project_id` int(10) NOT NULL, `user_id_fk` int(10) NOT NULL, `name` varchar(50) NOT NULL, `description` text NOT NULL, `generated_buildfile` text NOT NULL, `generation_date` int(10) NOT NULL, `mod_time` int(10) NOT NULL) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ENGINE=InnoDB;
+ALTER TABLE `project` ADD CONSTRAINT project_pk PRIMARY KEY (`project_id`); 
+ALTER TABLE `project` CHANGE project_id `project_id` int(10) AUTO_INCREMENT;   
+CREATE INDEX project_idx_01 ON `project` (`user_id_fk`);
+-- ALTER TABLE `project` ADD CONSTRAINT project_fk_01 FOREIGN KEY (`user_id_fk`) REFERENCES `user` (`user_id`) ON DELETE CASCADE;

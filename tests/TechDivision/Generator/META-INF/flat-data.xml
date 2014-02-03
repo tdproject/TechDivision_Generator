@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<table name="user">
+		<column>user_id</column>
+		<column>firstname</column>
+		<column>lastname</column>
+		<column>email</column>
+		<column>username</column>
+		<column>password</column>
+		<row>
+			<value>1</value>
+			<value>Thomas</value>
+			<value>Mustermann</value>
+			<value>tm@mustermann.de</value>
+			<value>mustermannt</value>
+			<value>test</value>
+		</row>
+	</table>
+	<table name="project">
+		<column>project_id</column>
+		<column>user_id_fk</column>
+		<column>name</column>
+		<column>description</column>
+		<column>generated_buildfile</column>
+		<column>generation_date</column>
+		<column>mod_time</column>
+		<row>
+			<value>1</value>
+			<value>1</value>
+			<value>Testname</value>
+			<value>Testdescription</value>
+			<value>/tmp/build.xml</value>
+			<value>123456789</value>
+			<value>123456789</value>
+		</row>
+	</table>
+</dataset>
