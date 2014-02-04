@@ -21,7 +21,7 @@
 		<api>${api.stability}</api>
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
-	<notes>- Add processor remote delegate implementation</notes>
+	<notes>Switching to pear.appserver.io/library PEAR channel</notes>
 	<contents>
 		<dir name="/">
 			<file baseinstalldir="/" name="generator" role="script"/>
@@ -130,6 +130,21 @@
 	<phprelease/>
 	<changelog>
 		<release xmlns="">
+                    <version>
+                        <release>0.3.19</release>
+                        <api>0.3.0</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2014-02-04</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        Switching to pear.appserver.io/library PEAR channel
+                    </notes>
+                </release>
+<release xmlns="">
                     <version>
                         <release>0.3.17</release>
                         <api>0.3.0</api>
